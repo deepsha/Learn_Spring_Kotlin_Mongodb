@@ -1,0 +1,15 @@
+use order-app
+db.orders.insertOne{{{user.name:"joe"},{user.address:"MG road"},{user.phoneNumber:"8989"},
+{user.email:"joe@gmail.com"},{user.accountBalance:"5000"},{restaurant.name:"Korean Fastfood"},{restaurant.address:"Beverly hill"},{restaurant.phoneNumber:"222989"},{order.time:10:00},{order.quantity:5},{order.price:15}}}
+db.orders.createIndex({OrderTime:1})
+db.orders.createIndex({user.name:1})
+
+-find most expensive order
+db.orders.find().sort({price:-1}).limit(1)
+-sort orders by name of restaurant
+db.orders.find().sort({restaurant.name:-1})
+
+- return order where total order is bigger than balance
+
+-apply 10 % discount on all total order
+db.order.updateMany({},{$mul:(total:0.9)})

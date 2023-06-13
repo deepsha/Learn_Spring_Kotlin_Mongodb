@@ -1,0 +1,46 @@
+Data is organized into databases. A MongoDB deployment can contain multiple databases. 
+Each database contains one or more collections. Each collection contains documents.
+
+>db.authors.insertOne({name:"Joe smith"})
+>db.authors.insertMany({name:"Joe smith"},{name:"Eliot howaritz"},{name:"Twilight"})
+>db.authors.findOne()
+>db.authors.find()
+>db.authors.find({name:"Joe smith"})
+>db.authors.updateOne({name:"Joe smith"},{$set:{website:"http://joeSmith.com"}})
+>db.authors.updateMany({},{$set:{books:[]}})
+>db.authors.deleteOne({name:"Joe smith"})
+
+Index: its subset of data with pointers to actual data.
+when you perform a query
+-if u have no index, the database checks every document
+	called a collection scan and not efficient
+If you have an index and the query can use the index, MongoDB can perform the query faster by only retrieving documents/data that are relevant. If you do not have an index that MongoDB can use, MongoDB has to check each document in a collection individually.
+
+type of indexes
+1.single field index
+2.partial index
+3. compound indexing
+4. multi key indexing
+5. text indexes
+6.wildcard
+7.hashed indexes
+>db.authors.createIndex({name:1})
+
+
+
+--name the database lookup
+use lookup
+--display collection
+show collections
+--name collection record
+--insert many record
+db.records.insertMany{{{name:"joe"},{phone:"8989"}},{name:"Smith"},{phone:"3222"}}}
+db.records.find()
+--create index on name and phone number
+db.records.createIndex({name:1})
+db.records.createIndex({phone:1})
+
+--find less  than or equal to
+db.records.findOne({"price":{$lte:2000}})
+
+Mongo db execute sort() skip() and limit() in this order

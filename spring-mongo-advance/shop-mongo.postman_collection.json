@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "9657072a-a559-4df4-b669-b64945dd23bd",
+		"name": "shop-mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add new order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"id\":102,\r\n    \"name\":\"Mary\",\r\n     \"gender\":\"male\",\r\n     \"products\":[\r\n    {\r\n         \"name\":\"Dress\",\r\n         \"quantity\":1,\r\n         \"price\":14\r\n     },\r\n     {\r\n         \"name\":\"Lipstick\",\r\n         \"quantity\":1,\r\n         \"price\":7\r\n     }\r\n     ],\r\n     \"address\":{\r\n         \"addressLine\":\"Pop street\",\r\n         \"city\":\"New York\",\r\n         \"postalcode\":77022\r\n     }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/shop/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"shop",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"id\":102,\r\n    \"name\":\"Mary\",\r\n     \"gender\":\"male\",\r\n     \"products\":[\r\n    {\r\n         \"name\":\"Dress\",\r\n         \"quantity\":1,\r\n         \"price\":14\r\n     },\r\n     {\r\n         \"name\":\"Lipstick\",\r\n         \"quantity\":1,\r\n         \"price\":7\r\n     }\r\n     ],\r\n     \"address\":{\r\n         \"addressLine\":\"Pop street\",\r\n         \"city\":\"New York\",\r\n         \"postalcode\":77022\r\n     }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/shop/getName/Mary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"shop",
+						"getName",
+						"Mary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by city",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"id\":102,\r\n    \"name\":\"Mary\",\r\n     \"gender\":\"male\",\r\n     \"products\":[\r\n    {\r\n         \"name\":\"Dress\",\r\n         \"quantity\":1,\r\n         \"price\":14\r\n     },\r\n     {\r\n         \"name\":\"Lipstick\",\r\n         \"quantity\":1,\r\n         \"price\":7\r\n     }\r\n     ],\r\n     \"address\":{\r\n         \"addressLine\":\"Pop street\",\r\n         \"city\":\"New York\",\r\n         \"postalcode\":77022\r\n     }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/shop/getCity/London",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"shop",
+						"getCity",
+						"London"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,29 @@
+update operation
+>{$set:{msg:"hello world!"}}
+>{$unset:{msg:""}}
+>{$inc:{quantity:-1,ordered:1}}
+>{$mul:{price:0.9}}
+>{$max:{bid:500}}
+>{$min:{lowest:10}}
+
+logical
+$and
+$or
+$nor
+$not
+
+Comaprtor operator
+$eq(=)
+$gt(>)
+$gte(>=)
+$lt(<)
+$lte(<=)
+$ne(=/)
+
+Array
+$push
+$pop
+$addToSet
+
+Aggregator
+db.inventory.aggregator([{$group:{_id:"$source"}}])
